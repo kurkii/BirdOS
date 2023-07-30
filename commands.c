@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/resource.h>
+//#include <sys/resource.h>
 #include <ctype.h>
 #include "fs.c"
 #include "duck.c"
@@ -100,12 +100,12 @@ void help_command(void){ // "help"
     c = 1;
 }
 
-void mem_command(void){ // "mem" - only works on loonix
-    struct rusage r_usage;
-    getrusage(RUSAGE_SELF,&r_usage);
-    printf("Memory usage: %ld kilobytes\n",r_usage.ru_maxrss);
-    c = 1;
-}
+//void mem_command(void){ // "mem" - only works on loonix
+//    struct rusage r_usage;
+//    getrusage(RUSAGE_SELF,&r_usage);
+//    printf("Memory usage: %ld kilobytes\n",r_usage.ru_maxrss);
+//    c = 1;
+//}
 
 void bird_command(void){ // "bird"
     printf("%s     _\\|      __     |/_ \n", C_BLUE);
@@ -131,7 +131,7 @@ Command commands[] = {
     {&read_command, "read"},
     {&clear_command, "clear"},
     {&help_command, "help"},
-    {&mem_command, "mem"},
+    //{&mem_command, "mem"},
     {&bird_command, "bird"},
 }; // array of all commands. example command: {&nameoffunction, "nameofcommand"}
 
