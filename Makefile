@@ -1,4 +1,4 @@
-all: main.c
+all: src/main.c
 	cc src/main.c -Wall -lm -o birdOS
 run:
 	cc src/main.c -Wall -lm -o birdOS
